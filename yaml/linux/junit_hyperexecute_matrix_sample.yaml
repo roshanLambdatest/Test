@@ -1,0 +1,17 @@
+---
+version: 0.1
+runson: linux
+
+matrix:
+  classname: ["SelPlayGroundTest1" ]
+
+pre:
+  - mvn clean install
+
+testSuites:
+  - mvn -Dplatname=linux -Dmaven.repo.local=m2_cache_dir -Dtest=$classname test site surefire-report:report
+
+retryOnFailure: true
+maxRetries: 1
+
+jobLabel: [selenium-junit, linux, matrix]

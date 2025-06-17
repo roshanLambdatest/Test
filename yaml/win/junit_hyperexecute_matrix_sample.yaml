@@ -1,0 +1,19 @@
+---
+version: 0.1
+runson: win
+
+concurrency: 3
+
+matrix:
+  classname: ["SelPlayGroundTest1" ]
+
+pre:
+  - mvn clean install
+
+testSuites:
+  - mvn `-Dplatname=win `-Dmaven.repo.local=m2_cache_dir `-Dtest=$classname test site surefire-report:report
+
+retryOnFailure: true
+maxRetries: 1
+
+jobLabel: [selenium-junit, win, matrix]

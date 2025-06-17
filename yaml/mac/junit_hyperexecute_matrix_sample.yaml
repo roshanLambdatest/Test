@@ -1,0 +1,17 @@
+---
+version: 0.1
+runson: mac
+
+matrix:
+  classname: ["SelPlayGroundTest1", "SelPlayGroundTest2", "SelPlayGroundTest3" ]
+
+pre:
+  - mvn -Dmaven.repo.local=${CACHE_DIR} -Dmaven.test.skip=true clean install
+
+testSuites:
+  - mvn -Dplatname=mac -Dmaven.repo.local=m2_cache_dir -Dtest=$classname test site surefire-report:report
+
+retryOnFailure: true
+maxRetries: 1
+
+jobLabel: [selenium-junit, mac, matrix]
