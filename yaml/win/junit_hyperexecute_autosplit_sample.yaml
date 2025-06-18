@@ -4,6 +4,8 @@ runson: win
 
 autosplit: true
 concurrency: 3
+env:
+  build: ${{.secrets.LT_BUILd}}
 
 pre:
   - mvn clean install
@@ -17,8 +19,7 @@ testRunnerCommand: mvn `-Dplatname=win `-Dmaven.repo.local=m2_cache_dir `-Dtest=
 
 retryOnFailure: true
 maxRetries: 1
-env:
-  buildName: ${{.secrets.LT_BUILd}}
+
 
 
 jobLabel: [selenium-junit, win, autosplit]
