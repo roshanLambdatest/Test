@@ -18,4 +18,7 @@ testRunnerCommand: mvn `-Dplatname=win `-Dmaven.repo.local=m2_cache_dir `-Dtest=
 retryOnFailure: true
 maxRetries: 1
 
+buildname: ${{.secrets.LT_BUILd}}
+
+
 jobLabel: [selenium-junit, win, autosplit]
