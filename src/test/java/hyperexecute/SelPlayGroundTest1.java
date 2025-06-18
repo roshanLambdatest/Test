@@ -51,8 +51,8 @@ public class SelPlayGroundTest1
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("version", version);
         capabilities.setCapability("platform", platform);
-        capabilities.setCapability("build", build);
-        capabilities.setCapability("name", name);
+        // capabilities.setCapability("build", build);
+        // capabilities.setCapability("name", name);
         capabilities.setCapability("performance", true);
         capabilities.setCapability("network", true);
         capabilities.setCapability("visual", true);

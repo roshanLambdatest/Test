@@ -4,8 +4,8 @@ runson: win
 
 autosplit: true
 concurrency: 3
-env:
-  build: ${{.secrets.LT_BUILd}}
+
+build: ${{.secrets.LT_BUILd}}
 
 pre:
   - mvn clean install
@@ -22,4 +22,4 @@ maxRetries: 1
 
 
 
-jobLabel: [selenium-junit, win, autosplit]
+jobLabel: [${{.secrets.LT_BUILd}}, win, autosplit]
